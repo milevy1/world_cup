@@ -24,4 +24,10 @@ class TeamTest < Minitest::Test
     assert team.eliminated?
   end
 
+  def test_team_players_starts_as_empty_array
+    team = Team.new("France")
+
+    assert_equal [], team.players
+  end
+
 end
