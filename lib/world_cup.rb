@@ -1,9 +1,9 @@
 class WorldCup
-  attr_reader :year, :countries
+  attr_reader :year, :teams
 
-  def initialize(year, countries)
+  def initialize(year, teams)
     @year = year
-    @countries = countries
+    @teams = teams
   end
 
 end
