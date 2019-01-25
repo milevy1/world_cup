@@ -19,8 +19,18 @@ class WorldCup
     return players_array
   end
 
-end
+  def all_players_by_position
+    players_hash = {}
+    positions_array = []
+    @teams.each{ |team|
+      team.players.each { |player|
+        if players_hash[player.position].nil?
+          players_hash[player.position] = []
+        end
+        players_hash[player.position] << player
+      }
+    }
+    return players_hash
+  end
 
-# For the `active_players_by_position` method,
-# an active player is a player that is on a team
-# that is not eliminated.
+end
